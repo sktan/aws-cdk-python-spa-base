@@ -15,7 +15,7 @@ This base stack is designed to provide the bare minimum requirements required to
 - sktan_cdk.single_page_app
 
 ```
-pip install sktan_cdk.single_page_app
+pip install sktan-cdk.single-page-app
 ```
 
 ## Deploying as is

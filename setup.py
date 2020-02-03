@@ -28,7 +28,7 @@ with open("README.md") as fp:
 
 setuptools.setup(
   name="sktan_cdk.single_page_app",
-  version="0.1.1",
+  version="0.1.0",
 
   description="Base CDK stack for Single Page Applications",
   long_description=LONG_DESCRIPTION,
@@ -41,10 +41,7 @@ setuptools.setup(
   packages=setuptools.find_packages(),
 
   install_requires=[
-    "aws-cdk.core",
-    "aws-cdk.aws-cloudfront",
-    "aws-cdk.aws-s3",
-    "aws-cdk.aws-s3-deployment"
+    requirement.strip() for requirement in open('requirements.txt').readlines()
   ],
 
   python_requires=">=3.6",

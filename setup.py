@@ -28,16 +28,17 @@ with open("README.md") as fp:
 
 setuptools.setup(
   name="sktan_cdk.single_page_app",
-  version="0.1.0",
+  version="0.1.1",
 
   description="Base CDK stack for Single Page Applications",
   long_description=LONG_DESCRIPTION,
   long_description_content_type="text/markdown",
 
   author="Steven Tan",
+  author_email="git@sktan.com",
+  url="https://github.com/sktan/aws-cdk-python-spa-base",
 
-  package_dir={"": "sktan_cdk"},
-  packages=setuptools.find_packages(where="sktan_cdk"),
+  packages=setuptools.find_packages(),
 
   install_requires=[
     "aws-cdk.core",

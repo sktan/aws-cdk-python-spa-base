@@ -22,17 +22,32 @@ pip install sktan-cdk.single-page-app
 
 If you want to use the stack as is, you will be able to use this like any other CDK stack and then run `cdk synth` to view your results:
 
+### Folder Structure
+```
+example-spa-website
+|-- app.py
+|-- cdk.json
+|-- website_html
+|   |-- index.html
+|   |-- css
+|   |   |-- example.css
+|   |-- images
+|   |   |-- logo.jpg
+```
+
+### app.py
 ```
 from aws_cdk import core
 import sktan_cdk.single_page_app
 
 app = core.App()
-spa_app = single_page_app(app, "www-example-com")
-spa_app.create_website_bucket('../website_html')
+
+spa_app = single_page_app(app, "example-spa-website", website_identifier='www-example-com')
+spa_app.create_website_bucket('website_html')
 spa_app.create_cloudfront_distribution(cloudfront_alias={
   'acm_cert_ref': 'arn:aws:acm:us-east-1:123456789012:certificate/example-certificate-arn-format',
   'names': [
-    www.example.com
+    'www.example.com'
   ]
 })
 app.synth()
